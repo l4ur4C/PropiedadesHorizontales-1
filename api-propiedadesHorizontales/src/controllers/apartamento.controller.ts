@@ -48,8 +48,6 @@ export class ApartamentoController {
   async apartamentosDisponibles(): Promise<Apartamento[]>{
     return this.apartamentoServicio.getApartamentosDisponibles();
   }
-  
-
 
   @post('/apartamentos')
   @response(200, {

@@ -35,7 +35,9 @@ export class ConjuntoController {
   @response(200,{
     description: 'validar el ingreso del Administrador'
   })
-  async validarAccsesoConjunto(@requestBody() ingreso: Ingreso){
+  async validarAccsesoConjunto(
+    @requestBody() ingreso: Ingreso
+  ){
     let conj = await this.autenticacionService.validarAccesoConjunto(ingreso.usuario, ingreso.clave);
     if ( conj ){
       let token = this.autenticacionService.generarTokenJWTc(conj);

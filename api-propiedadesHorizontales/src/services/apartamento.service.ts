@@ -20,5 +20,17 @@ export class ApartamentoService {
     });
     return listaApartamentos;
   }
-   
+  
+  getApartamentosDisponiblesH(): Promise<Apartamento[]>{
+    let listaApartamentos = this.apartamentoRepository.find({
+      include: ['habitantes'],
+      where: {
+        numero: ''
+      }
+    });
+    return listaApartamentos;
+  }
+
+  
+
 }
