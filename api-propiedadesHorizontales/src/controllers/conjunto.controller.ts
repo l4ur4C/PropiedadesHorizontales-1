@@ -32,7 +32,7 @@ export class ConjuntoController {
   ) {}
 
   @post('/validar-acceso-conjunto')
-  @response(2000,{
+  @response(200,{
     description: 'validar el ingreso del Administrador'
   })
   async validarAccsesoConjunto(@requestBody() ingreso: Ingreso){
